@@ -12,7 +12,8 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        $properties = Property::orderBy('created_at','desc')->paginate(25);
+        return view('admin.properties.index',$properties);
     }
 
     /**
@@ -34,11 +35,7 @@ class PropertyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      */
