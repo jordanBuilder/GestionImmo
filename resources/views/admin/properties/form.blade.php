@@ -43,10 +43,10 @@
             'value'=>$property->codePostal]) 
         </div>
         @include('shared.select',['name'=> 'options','label'=>'Options',
-            'value'=>$property->options()->pluck('id'),'mutliple'=>true])
+            'value'=>$property->options()->pluck('id'),'options'=>$options,'mutliple'=>true])
 
         @include('shared.checkbox',['label'=>'Vendu', 'name'=> 'sold',
-            'value'=>$property->sold])
+            'value'=>$property->sold,])
         <div>
             <button class="btn btn-primary">
                 @if($property->exists)

@@ -23,7 +23,7 @@ class Property extends Model
 
     ];
 
-    public function options():BelongsToMany
+    public function options()
     {
         return $this->belongsToMany(Option::class);
     }

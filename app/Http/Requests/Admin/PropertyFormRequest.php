@@ -43,7 +43,8 @@ class PropertyFormRequest extends FormRequest
 
             "codePostal"=>["required","min:3"],
 
-            "sold"=>["required","boolean"],            
+            "sold"=>["required","boolean"],  
+            'options'=>["array",'exists:options,id','required']   
         ];
     }
 
