@@ -22,4 +22,9 @@ class Property extends Model
         "sold",
 
     ];
+
+    public function options():BelongsToMany
+    {
+        return $this->belongsToMany(Option::class);
+    }
 }
