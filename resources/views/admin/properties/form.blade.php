@@ -42,6 +42,9 @@
             @include('shared.input',['class' => 'col','label'=>'Code postal', 'name'=> 'codePostal',
             'value'=>$property->codePostal]) 
         </div>
+        @include('shared.select',['name'=> 'options','label'=>'Options',
+            'value'=>$property->options()->pluck('id'),'mutliple'=>true])
+
         @include('shared.checkbox',['label'=>'Vendu', 'name'=> 'sold',
             'value'=>$property->sold])
         <div>
