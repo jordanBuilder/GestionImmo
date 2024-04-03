@@ -33,9 +33,9 @@ class PropertyFormRequest extends FormRequest
             
             "city"=>["required"],
 
-            "rooms"=>["required","min:3"],
+            "rooms"=>["required","integer"],
 
-            "bedRooms"=>["required","min:3"],
+            "bedRooms"=>["required","integer"],
 
             "floor"=>["required","integer"],
 
