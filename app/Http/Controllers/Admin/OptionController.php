@@ -41,7 +41,7 @@ class OptionController extends Controller
     {
         // creer une nouvelle propriete
         $option = Option::create($request->validated());
-        return redirect()->route('admin.option.index')->with('success','L\'option  a bien ét" créé');
+        return redirect()->route('admin.option.index')->with('success','L\'option  a bien été créé');
     }
 
     /**
@@ -63,8 +63,8 @@ class OptionController extends Controller
      */
     public function update(OptionFormRequest $request, Option $option)
     {
-        $property->update($request->validated());
-        return to_route('admin.property.index')->with('success', 'L\'option a bien été mise à jour');
+        $option->update($request->validated());
+        return to_route('admin.option.index')->with('success', 'L\'option a bien été mise à jour');
         
     }
 
@@ -75,6 +75,6 @@ class OptionController extends Controller
     {
         //
         $option->delete();
-        return to_route('admin.property.index')->with('success', 'L\'option a bien été supprimé');
+        return to_route('admin.option.index')->with('success', 'L\'option a bien été supprimé');
     }
 }
