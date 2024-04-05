@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PropertyFormRequest;
 use App\Models\Property;
 use Illuminate\Http\Request;
+
 use App\Models\Option;
+
+use App\Http\Requests\Admin\OptionFormRequest;
 
 class PropertyController extends Controller
 {
@@ -37,10 +40,10 @@ class PropertyController extends Controller
             'sold'=>false,
         ]);
         //pluck('id') veut dire qu'on veut recupérer l'ensemble des id
-        dd();
+        
         return view('admin.properties.form',[
             'property' => $property,
-            'option'=>Option::pluck('name','id'),
+            'options'=> Option::pluck('name','id'),
         ]);
     }
 
@@ -49,9 +52,11 @@ class PropertyController extends Controller
      */
     public function store(PropertyFormRequest $request)
     {   
-        $property->options()->sync       ($request->validated('options'));
-        // creer une nouvelle propriete
         $property = Property::create($request->validated());
+        
+        $property->options()->sync($request->validated('options'));
+        // creer une nouvelle propriete
+       
         return redirect()->route('admin.property.index')->with('success','Le bien a bien été créé');
     }
 

@@ -33,10 +33,8 @@
           </div>
           </div>
       </nav>
-    <div class="container mt-5">
-        
+          
         @yield("content")
-    </div>
-   
+    
 </body>
 </html>
