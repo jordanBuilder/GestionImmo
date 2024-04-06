@@ -9,7 +9,7 @@ use App\Models\Property;
 class PropertyController extends Controller
 {
     public function index(){
-       $properties = Property::paginate(2);
+       $properties = Property::paginate(4);
        return view('property.index',[
         'properties'=> $properties
        ]);
