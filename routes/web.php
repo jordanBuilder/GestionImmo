@@ -12,7 +12,7 @@ Route::get('/biens', [App\Http\Controllers\PropertyController::class, 'index'])-
 Route::get('/biens/{slug}-{property}', [App\Http\Controllers\PropertyController::class, 'show'])->name('property.show')->where(['property'=> $idRegex,
  'slug'=> $slugRegex
 ]);
-
+//on utilise ->where pour ajouter des contraintes de format pour les paramètres d'URL dynamiques
 
 Route::prefix('admin')->name('admin.')->group(function(){
    Route::resource('property',App\Http\Controllers\Admin\PropertyController::class)->except(['show']);
