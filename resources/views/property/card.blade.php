@@ -9,7 +9,9 @@
             {{ $property->surface }}m - {{ $property->city }} - {{ $property->codePostal }}
         </p>
         <div class="text-primary fw-bold" style="font-size:1.4rem;">
-            {{ number_format($property->price, thousands_separator: ' ') }} FCFA
+            {{ number_format($property->price, thousands_separator: ' ') }}
+            FCFA
         </div>
+        <img src="../../images/soldIcon.png" alt="">
     </div>
 </div>

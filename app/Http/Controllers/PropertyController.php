@@ -13,7 +13,7 @@ class PropertyController extends Controller
     public function index(SearchPropertiesRequest $request){
         //quand on fait paginate ou limit cela va generer un builder et c'est grace à ça on va generer une requete
          //et partir de là il appelle les methodes
-        $query = Property::query();
+        $query = Property::query()->orderBy('created_at','desc');
 
         if($request->validated('price')){
            $query = $query->where('price','<=', $request->validated('price'));
