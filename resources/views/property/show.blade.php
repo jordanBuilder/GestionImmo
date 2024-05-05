@@ -19,25 +19,32 @@
         <div class="mt-4">
             <h4>Interessé par ce bien ? </h4>
 
-            <form action="" method="post" class="vstack gap-3">
+            <form action="{{route('property.contact',$property)}}" method="post" class="vstack gap-3">
                 @csrf
                 <div class="row">
                     @include('shared.input', [
                         'class' => 'col',
                         'label' => 'Prénom',
                         'name' => 'firstname',
+                        'value'=> 'Jordan'
                     ])
 
-                    @include('shared.input', ['class' => 'col', 'label' => 'Nom', 'name' => 'lastname'])
+                    @include('shared.input', ['class' => 'col', 'label' => 'Nom', 'name' => 'lastname',
+                    'value' =>'Tomegah'
+                    ])
+
                 </div>
                 <div class="row">
-                    @include('shared.input', ['class' => 'col', 'label' => 'Telephone', 'name' => 'phone'])
+                    @include('shared.input', ['class' => 'col', 'label' => 'Telephone', 'name' => 'phone',
+                    'value' =>'99 00 00 00'
+                    ])
 
                     @include('shared.input', [
                         'class' => 'col',
                         'type' => 'email',
                         'label' => 'Email',
                         'name' => 'email',
+                        'value' =>'JordanYou@gmail.com'
                     ])
                 </div>
 
@@ -46,6 +53,8 @@
                     'type' => 'textarea',
                     'label' => 'Votre message',
                     'name' => 'message',
+                    'value'=>'Mon petit message'
+
                 ])
                 <div>
                     <button class="btn btn-primary">
@@ -107,7 +116,7 @@
                             <td>
                                 {{$property->address
                                 }}
-                                
+
                                 {{ $property->city }} - {{ $property->codePostal }}
                             </td>
                         </tr>

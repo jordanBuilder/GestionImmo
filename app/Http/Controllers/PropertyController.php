@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SearchPropertiesRequest;
+use
+App\Http\Requests\PropertyContactRequest;
 
 use App\Models\Property;
 
@@ -46,6 +48,10 @@ class PropertyController extends Controller
       return view('property.show',[
          'property'=>$property
       ]);
+    }
+
+    public function contact(Property $property, PropertyContactRequest $request){
+
     }
 
 

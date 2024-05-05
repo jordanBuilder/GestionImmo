@@ -14,8 +14,13 @@ Route::get('/biens/{slug}-{property}', [App\Http\Controllers\PropertyController:
 ]);
 //on utilise ->where pour ajouter des contraintes de format pour les paramètres d'URL dynamiques
 
+Route::post('/biens/{property}/contact',[\App\Http\Controllers\PropertyController::class, 'contact'])->name('property.contact')->where([
+    'property'=>$idRegex,
+]);
+
+
 Route::prefix('admin')->name('admin.')->group(function(){
    Route::resource('property',App\Http\Controllers\Admin\PropertyController::class)->except(['show']);
-   
+
    Route::resource('option',App\Http\Controllers\Admin\OptionController::class)->except(['show']);
 });
