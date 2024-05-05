@@ -18,7 +18,7 @@
         </hr>
         <div class="mt-4">
             <h4>Interessé par ce bien ? </h4>
-
+            @include('shared.flash')
             <form action="{{route('property.contact',$property)}}" method="post" class="vstack gap-3">
                 @csrf
                 <div class="row">
